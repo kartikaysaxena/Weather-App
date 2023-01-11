@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import SearchLayout from './components/SearchLayout';
 
 function App() {
+  const [temp,setTemp] = useState('')
+  const [im,setIm] = useState('')
+  const [fl,setfl] = useState('')
+  const [wd,setWd] = useState('')
+  const [ws,setws] = useState('')
+  const [city,setCity] = useState('')
+  const api = (props) => {
+    setTemp(props.temperature)
+    setIm(props.weaimg)
+    setfl(props.feelslike)
+    setWd(props.weather_description)
+    setws(props.wind_speed)
+    setCity(props.city)
+    console.log(props)
+  }
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchLayout callback={api}/>
+       
     </div>
   );
 }
