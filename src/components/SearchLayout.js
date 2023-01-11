@@ -117,7 +117,7 @@ export default function SearchLayout(props) {
         const option11 = {
             method: 'GET',
             url: 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather',
-            params: { city: "New+Delhi" },
+            params: { city: "Lucknow" },
             headers: {
                 'X-RapidAPI-Key': '33117cbacemsh3d83ef3e3312033p141470jsn718339808033',
                 'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
